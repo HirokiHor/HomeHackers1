@@ -1,0 +1,7 @@
+Vulnerability: A vulnerability is an existing weakness that can allow the attacker to compromise the security of the system. 
+
+Exploit: An exploit is a defined way (piece of software, set of commands etc.) that takes advantage of an existing vulnerability to breach the security of an IT system. 
+
+Threat: A threat is a possible danger that can exploit an existing vulnerability to cause possible harm. 
+
+Attack: An attack is any action that violates the security of the system. In other words, it is an assault on the system security that is derived from an existing threat. 
