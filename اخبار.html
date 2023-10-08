@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Website</title>
+  <style>
+    /* أضف أي تنسيقات CSS المناسبة هنا */
+  </style>
+</head>
+<body>
+  <h1>أخبار الموقع</h1>
+  <div id="news-container">
+    <!-- سيتم إضافة الأخبار هنا ديناميكيًا باستخدام الجافا سكريبت -->
+  </div>
+
+  <script>
+    // قم بتعريف العنوان ورابط الموقع الذي ترغب في أخذ الأخبار منه
+    const websiteUrl = 'thehackernews.com';
+
+    // حدد عنصر واجهة المستخدم الذي سيُعرض فيه الأخبار
+    const newsContainer = document.getElementById('news-container');
+    
+    // استدعاء البيانات من الموقع المحدد باستخدام fetch API
+    fetch('https://thehackernews.com')
+      .then(response => response.json())
+      .then(data => {
+         // قم بتجميع الأخبار الضرورية من بيانات الموقع
+         const news = data.news;
+         
+         // قم بإنشاء العناصر الفرعية (الأخبار) وأضفها إلى عنصر واجهة المستخدم الرئيسي
+         news.forEach(item => {
+            const newsElement = document.createElement('div');
+            newsElement.innerHTML = `
+              <h3>${item.title}</h3>
+              <img src="${item.image}" alt="News Image">
+              <p>${item.description}</p>
+            `;
+            newsContainer.appendChild(newsElement);
+         });
+      })
+      .catch(error => {
+         console.error('حدث خطأ عند استدعاء الأخبار:', error);
+      });
+      
+// استدعاء البيانات من الموقع المحدد باستخدام fetch API
+fetch('thehackernews.com')
+  .then(response => response.json())
+  .then(data => {
+     // قم بتجميع الأخبار الضرورية من بيانات الموقع
+     const news = data.news;
+     
+     // قم بإنشاء العناصر الفرعية (الأخبار) وأضفها إلى عنصر واجهة المستخدم الرئيسي
+     news.forEach(item => {
+        const newsElement = document.createElement('div');
+        newsElement.innerHTML = `
+          <h3>${item.title}</h3>
+          <img src="${item.image}" alt="News Image">
+          <p>${item.description}</p>
+        `;
+        newsContainer.appendChild(newsElement);
+     });
+  })
+  .catch(error => {
+     console.error('حدث خطأ عند استدعاء الأخبار:', error);
+  });
+  </script>
+</body>
+</html>

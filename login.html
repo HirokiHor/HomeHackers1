@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+
+    <style>
+        body {
+            background-image: url("wallpapersden.com_ai-landscape-2023-digital-art_1952x1120.jpg");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 300px;
+            padding: 20px;
+            /* background-color: #f2f2f2; */
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="login.py" method="post">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="تسجيل الدخول">
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("loginForm");
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const username = form.elements[0].value;
+            const password = form.elements[1].value;
+            const ipAddress = returnUserIPAddress(); // get user's IP address
+            saveLoginForm(username, password, ipAddress);
+            alert("Login successful!");
+            window.location.href = "file:///E:/car/index.html"; // Redirect to your main homepage after login
+        });
+
+        // Function to save login form data
+        function saveLoginForm(username, password, ipAddress) {
+            const data = `Username: ${username}, Password: ${password}, IP Address: ${ipAddress}`;
+            const fileName = "SER.txt";
+
+            // Create a temporary element with the data
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(data));
+
+            // Set the name of the file
+            element.setAttribute('download', fileName);
+
+            // Append the element to the body
+            document.body.appendChild(element);
+
+            // Trigger the click event
+            element.click();
+
+            // Remove the temporary element from the body
+            document.body.removeChild(element);
+        }
+
+        // Function to get user's IP address
+        function returnUserIPAddress() {
+            // Implement your own logic here to get the user's IP address
+            // For example, you can use a third-party service or check the user's network configurations
+            return "127.0.0.1"; // Replace this with your own IP address retrieval logic
+        }
+    </script>
+</body>
+</html>

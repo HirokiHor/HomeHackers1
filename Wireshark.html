@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME Hacker Course</title>
+    <script>
+      // استيراد واجهة المستخدم للاستفادة منها في العناصر الرسومية
+const readlineSync = require('readline-sync');
+
+// قائمة بأسماء الفيديوهات
+const videos = ['فيديو 1', 'فيديو 2', 'فيديو 3'];
+
+// عرض القائمة للمستخدم
+console.log('قائمة الفيديوهات:');
+
+for (let i = 0; i < videos.length; i++) {
+  console.log(`${i + 1}. ${videos[i]}`);
+}
+
+// استلام اختيار المستخدم
+const userChoice = readlineSync.question('الرجاء اختيار رقم الفيديو الذي تود مشاهدته أو تنزيله: ');
+
+// التأكد من أن الرقم المدخل صحيح وبداخل نطاق القائمة
+if (userChoice >= 1 && userChoice <= videos.length) {
+  const selectedVideo = videos[userChoice - 1];
+  console.log(`تم اختيار الفيديو: ${selectedVideo}`);
+  // قم هنا بتنفيذ ما تحتاجه، سواءً كان ذلك تشغيل الفيديو أو تنزيله
+} else {
+  console.log('رقم الفيديو الذي تم اختياره غير صحيح.');
+}
+    </script>
+    <style>
+    body{
+     background-color: #66d6ff;
+
+     }
+     .video-container {
+    margin: 0 -100px;
+}
+.video-container video {
+    margin: 0 100px;
+}
+      .sidebar-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #0d00ff;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999; /* يضع الزر في الأعلى */
+  }
+
+  .sidebar-btn:hover {
+    background-color: #0e4affc7;
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    top: 70px;
+    right: 63px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+
+  .dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .dropdown-menu li {
+    margin-bottom: 10px;
+  }
+
+  .dropdown-menu li a {
+    text-decoration: none;
+    color: #390f6c;
+    padding: 5px 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: #222222;
+  }
+  header {
+ padding: 20px;
+ background-color: #ffffff;
+ padding: 10px;
+ border-radius: 15px;
+ display: flex;
+ justify-content: center;
+}
+body {
+ font-family: Arial, sans-serif;
+ text-align: center;
+ 
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+  border: 2px solid rgb(90, 90, 237);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+ul li a:hover {
+  background-color: rgb(79, 24, 147);
+  color: rgb(56, 63, 188);
+}
+p{
+  color: #000000;
+}
+    </style>
+</head>
+<body>
+  <header>
+    <h1 class="po">Wireshark</h1>
+  </header>
+  <div class="video-container">
+    <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/1. المقدمة/1. نظرة عامة على الدورة.mp4" width="500" height="300" controls></video>
+    <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/1. المقدمة/2. كيف تستفيد كامل الاستفادة من هذه الدورة.mp4" width="500" height="300" controls></video>
+    </div> 
+    <div class="video-container">
+      <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/2. تجهيز المعمل الخاص بنا/1. VMware تثبيت.mp4" width="500" height="300" controls></video>
+      <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/2. تجهيز المعمل الخاص بنا/2. كنظام وهمي linux تثبيت نظام.mp4" width="500" height="300" controls></video>
+      </div>            
+      <div class="video-container">
+        <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/2. تجهيز المعمل الخاص بنا/3. Metasploitable تثبيت.mp4" width="500" height="300" controls></video>
+        <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/3. أساسيات الشبكات/1. OSI Model.mp4" width="500" height="300" controls></video>
+        </div>   
+        <div class="video-container">
+          <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/3. أساسيات الشبكات/2. Common Ports & Protocols.mp4" width="500" height="300" controls></video>
+          <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/3. أساسيات الشبكات/3. TCP & UDP بروتوكولات الشبكة.mp4" width="500" height="300" controls></video>
+          </div> 
+          <div class="video-container">
+            <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/4. Wireshark أداة/1. نظرة عامة حول الأداة واستخدامها.mp4" width="500" height="300" controls></video>
+            <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/5. استخدام الأداة بشكل احترافي/1. IPفلترة عناوين الـ.mp4" width="500" height="300" controls></video>
+            </div>                                             
+            <div class="video-container">
+              <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/5. استخدام الأداة بشكل احترافي/2. portsفلترة الـ.mp4" width="500" height="300" controls></video>
+              <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/5. استخدام الأداة بشكل احترافي/3. Sorting  الفرز.mp4" width="500" height="300" controls></video>
+              </div>   
+              <div class="video-container">
+                <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/5. استخدام الأداة بشكل احترافي/4. Streamsمتابعة الـ.mp4" width="500" height="300" controls></video>
+                <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/5. استخدام الأداة بشكل احترافي/5. HTTP Packetsتحليل الـ.mp4" width="500" height="300" controls></video>
+                </div> 
+                <div class="video-container">
+                  <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/6. طرق سرقة البيانات والهجوم على الشبكة/1. كيف تُسرق البيانات من الشبكة؟.mp4" width="500" height="300" controls></video>
+                  <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/6. طرق سرقة البيانات والهجوم على الشبكة/2. FTPسحب كلمات مرور وبيانات الـ.mp4" width="500" height="300" controls></video>
+                  </div> 
+   <div class="video-container">
+     <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/6. طرق سرقة البيانات والهجوم على الشبكة/3. Telnetسحب كلمات مرور وبيانات الـ.mp4" width="500" height="300" controls></video>
+     <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/6. طرق سرقة البيانات والهجوم على الشبكة/4. سحب كلمات المرور من الشبكة.mp4" width="500" height="300" controls></video>
+</div> 
+<div class="video-container">
+  <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/6. طرق سرقة البيانات والهجوم على الشبكة/5. سحب الصور المنتقلة عبر الشبكة.mp4" width="500" height="300" controls></video>
+  <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/7. ماذا يرى الجانب الدفاعي؟/1. كيف تظهر الهجمات لدى الجانب الدفاعي.mp4" width="500" height="300" controls></video>
+  </div>   
+  <div class="video-container">
+    <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/7. ماذا يرى الجانب الدفاعي؟/2. أساليب لتخطي مراقبة الجانب الدفاعي.mp4" width="500" height="300" controls></video>
+    <video src="كورسات/Wireshark دورة تحليل الشبكات واختراقها بأداة/8. نهاية الدورة/1. الختام.mp4" width="500" height="300" controls></video>
+    </div> 
+<hr>                          
+<p>كل الشكر و التقدير لصانع الكورس و في حال انه غير موافق علي نشر هذه الكورسات يرجي فقد التواصل معنا و سوف نقوم بي حذفها</p>
+                          <hr>                                                                  
+
+<div class="sidebar-btn" onclick="toggleMenu()">&#9776;</div>
+
+<div class="dropdown-menu" id="dropdown">
+  <ul>
+    <li><a href="file:///E:/car/index1.html">Home</a></li>
+    <!-- <li> <a href="file:///E:/car/Comment.html">الدردشه</a></li> -->
+    <!-- <li><a href="#"></a></li> -->
+  </ul>
+</div>
+<script>
+  function toggleMenu() {
+   var dropdownMenu = document.getElementById('dropdown');
+   dropdownMenu.classList.toggle('show');
+ }
+ var likeCount = 0;
+
+function likeVideo() {
+likeCount++;
+document.getElementById("likeCount").textContent = likeCount;
+}
+</script>
+</body>
+</html>
